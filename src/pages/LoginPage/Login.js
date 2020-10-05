@@ -152,7 +152,7 @@ function Login(props) {
                   </p>
                   <div className="text-center social-btn">
                     <a
-                      href={`${"https://e-taqreeb-api.herokuapp.com"}/login/facebook`}
+                      href={`http://localhost:5000/login/facebook`}
                       className="btn btn-primary"
                       target="_self"
                     >
@@ -161,7 +161,7 @@ function Login(props) {
                     </a>
 
                     <a
-                      href={`${"https://e-taqreeb-api.herokuapp.com"}/login/google`}
+                      href={`http://localhost:5000/login/google`}
                       className="btn btn-danger"
                       target="_self"
                     >

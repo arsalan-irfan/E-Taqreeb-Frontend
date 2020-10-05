@@ -7,6 +7,8 @@ const PhotographerHome = (props) => {
     setPhotographers(props.photographers);
   }, [props.photographers]);
   const domain = "https://e-taqreeb-api.herokuapp.com";
+  
+  
   const [photographers, setPhotographers] = React.useState(props.photographers);
   const [searchString, setSearchString] = React.useState("");
   const [range, setRange] = React.useState({ priceFrom: 0, priceTo: 0 });
@@ -81,11 +83,11 @@ const PhotographerHome = (props) => {
                   style={{ border: "none" }}
                 >
                   <div className="iq-header-title">
-                    <div className="row">
-                      <div className="col-4">
+                  <div className="row">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <h4 className="card-title">Photographers</h4>
                       </div>
-                      <div className="col-8">
+                      <div className="col-lg-8 col-md-6 col-sm-12">
                         <div className="iq-search-bar">
                           <form action="#" className="searchbox">
                             <input
@@ -173,7 +175,7 @@ const PhotographerHome = (props) => {
                   key={photographer._id}
                   name={photographer.company}
                   desc={photographer.description}
-                  image={photographer.images[0].url}
+                  image={photographer.images && photographer.images.length>0?photographer.images[0].url:""}
                   data={photographer}
                   detailUrl={`/user/photographer/${photographer._id}`}
                 />

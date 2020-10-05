@@ -6,7 +6,6 @@ import LawnDesc from "./LawnDescription";
 import TabNavigation from "../../../components/TabNavigation/TabNavigation";
 import axios from "axios";
 import NotFoundPage from "../../../Error/Error";
-import { Widget } from "react-chat-widget";
 import "react-chat-widget/lib/styles.css";
 import { successAlert, errorsAlert } from "../../../actions/alert";
 import { fetchAllLawns } from "../../../actions/lawn";
@@ -94,7 +93,6 @@ const Index = (props) => {
     <div className="container">
       {!loading && lawn._id ? (
         <React.Fragment>
-          <Widget />
           <div className="row">
             <div className="col-sm-12">
               <div className="iq-card ">

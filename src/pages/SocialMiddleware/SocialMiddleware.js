@@ -8,12 +8,14 @@ import Cookies from 'js-cookie';
 const SocialMiddleware = ({ SocialLogin, isAuthenticated }) => {
   useEffect(() => {
     const token = Cookies.get('auth');
+    console.log("Token",token);
     if (token) {
       const token = Cookies.get('auth');
       // SocialLogin();
       Cookies.remove('auth');
       localStorage.setItem('token', token);
       // loadToken(token);
+      
     }
     SocialLogin();
   }, []);

@@ -7,6 +7,7 @@ const LawnHome = (props) => {
     setLawns(props.lawns);
   }, [props.lawns]);
   const domain = "https://e-taqreeb-api.herokuapp.com";
+  
   const [lawns, setLawns] = React.useState(props.lawns);
   const [searchString, setSearchString] = React.useState("");
   const [range, setRange] = React.useState({ priceFrom: 0, priceTo: 0 });
@@ -47,10 +48,10 @@ const LawnHome = (props) => {
   const searchLawnByRange = async (e) => {
     e.preventDefault()
     try {
-      let {priceFrom,priceTo} = range 
+      let { priceFrom, priceTo } = range
       let res = await axios.post(
         `${domain}/lawn/range`,
-        {priceFrom,priceTo},
+        { priceFrom, priceTo },
         config
       );
       if (res.data) {
@@ -65,8 +66,8 @@ const LawnHome = (props) => {
     setLawns(props.lawns);
     setRange({
       ...range,
-      priceTo:0,
-      priceFrom:0
+      priceTo: 0,
+      priceFrom: 0
     })
   };
   return (
@@ -81,11 +82,11 @@ const LawnHome = (props) => {
                   style={{ border: "none" }}
                 >
                   <div className="iq-header-title">
-                    <div className="row">
-                      <div className="col-4">
+                  <div className="row">
+                      <div className="col-lg-4 col-md-6 col-sm-12">
                         <h4 className="card-title">Lawns & Banquets</h4>
                       </div>
-                      <div className="col-8">
+                      <div className="col-lg-8 col-md-6 col-sm-12">
                         <div className="iq-search-bar">
                           <form action="#" className="searchbox">
                             <input
@@ -107,6 +108,7 @@ const LawnHome = (props) => {
                   </div>
                 </div>
               </div>
+
               <div className="iq-card">
                 <div className="iq-card-header d-flex justify-content-between">
                   <div className="iq-header-title">
@@ -114,11 +116,11 @@ const LawnHome = (props) => {
                   </div>
                 </div>
                 <div className="iq-card-body">
-                  
+
                   <form>
                     <div className="form-row">
                       <div className="col">
-                      <label>
+                        <label>
                           Price from:
                         </label>
                         <input
@@ -126,10 +128,10 @@ const LawnHome = (props) => {
                           className="form-control"
                           placeholder="Price From"
                           value={range.priceFrom}
-                          onChange={(e)=>{
+                          onChange={(e) => {
                             setRange({
                               ...range,
-                              priceFrom:e.target.value
+                              priceFrom: e.target.value
                             })
                           }}
                         />
@@ -143,22 +145,22 @@ const LawnHome = (props) => {
                           className="form-control"
                           placeholder="Price to"
                           value={range.priceTo}
-                          onChange={(e)=>{
+                          onChange={(e) => {
                             setRange({
                               ...range,
-                              priceTo:e.target.value
+                              priceTo: e.target.value
                             })
                           }}
                         />
                       </div>
                       <div className="col">
-                          <div style={{marginTop:"12%"}}>
-                          <button className="btn btn-primary rounded-pill  " onClick={(e)=>{searchLawnByRange(e);}}>Apply Filter</button>   
-                           <button className="btn btn-danger rounded-pill  " onClick={(e)=>{removeFilter(e);}}>Remove Filter</button> 
-                          </div>
-  
+                        <div style={{ marginTop: "12%" }}>
+                          <button className="btn btn-primary rounded-pill  " onClick={(e) => { searchLawnByRange(e); }}>Apply Filter</button>
+                          <button className="btn btn-danger rounded-pill  " onClick={(e) => { removeFilter(e); }}>Remove Filter</button>
+                        </div>
+
                       </div>
- 
+
                     </div>
                   </form>
                 </div>
