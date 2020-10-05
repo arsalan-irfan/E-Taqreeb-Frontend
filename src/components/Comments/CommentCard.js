@@ -25,7 +25,6 @@ function CommentCard(props) {
             </p>
           </div>
           <div className="iq-card-post-toolbar">
-            <p className="mb-0 text-primary">6 hour ago</p>
             {/* Options */}
             {user._id == props.user._id ? (
               <div className="dropdown">

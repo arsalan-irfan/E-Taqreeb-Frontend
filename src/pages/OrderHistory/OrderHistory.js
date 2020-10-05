@@ -298,11 +298,12 @@ const OrderHistory = ({ userId, acceptOrder, rejectOrder }) => {
                               <td>
                                 <ReactTimeAgo date={order.createdAt} />
                               </td>
+                              {console.log(order.status)}
                               {order.status == 0 ? (
                                 <td>Pending</td>
                               ) : order.status == 1 ? (
                                 <td> Accepted</td>
-                              ) :order.status ==2 ?
+                              ) :order.status == 2 ?
                             <td>Rejected</td>: null
                             }
                             </tr>
@@ -325,7 +326,7 @@ const OrderHistory = ({ userId, acceptOrder, rejectOrder }) => {
                                 <td>Pending</td>
                               ) : order.status == 1 ? (
                                 <td> Accepted</td>
-                              ) : null}
+                              ) : <td>Rejected</td>}
                             </tr>
                             
         

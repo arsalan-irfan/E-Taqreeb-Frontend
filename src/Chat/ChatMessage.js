@@ -11,7 +11,6 @@ export default function ChatMessage(props) {
             className="avatar-35 "
           />
         </a>
-        <span className="chat-time mt-1">6:53</span>
       </div>
       <div className="chat-detail">
         <div className="chat-message">
