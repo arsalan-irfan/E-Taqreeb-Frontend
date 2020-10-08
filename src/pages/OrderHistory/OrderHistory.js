@@ -27,6 +27,7 @@ const OrderHistory = ({ userId, acceptOrder, rejectOrder }) => {
       const ord = await axios.get(`${domain}/users/getOrderHistory/${userId}`, config);
       if(ord){
         setOrders(ord.data.order)
+       // setDate(ord.data.bookingDate)
       }
     } catch (error) {
       console.log(error)
@@ -60,7 +61,7 @@ const OrderHistory = ({ userId, acceptOrder, rejectOrder }) => {
         setUser(res.data.user);
         setPackage(res.data.package);
         // setDate(res.data.createdAt);
-        const a = new Date(res.data.createdAt);
+        const a = new Date(res.data.bookingDate);
         setDate(a);
         setStatus(res.data.status);
         setLoading(false);
@@ -193,7 +194,7 @@ const OrderHistory = ({ userId, acceptOrder, rejectOrder }) => {
               </div>
               <div className="row ">
                 <div className="col-md-8">
-                <label> Order was placed on: </label>
+                <label> Order was placed for: </label>
 
                 <input
                   type="text"
@@ -280,7 +281,7 @@ const OrderHistory = ({ userId, acceptOrder, rejectOrder }) => {
                       </thead>
                       <tbody>
                         {orders.map((order, key) => {
-                          console.log('order is:', order)
+                          console.log('order is curentntntalskd:', order)
                           return (
                             
                               order.lawnId?

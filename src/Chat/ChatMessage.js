@@ -11,7 +11,7 @@ export default function ChatMessage(props) {
             className="avatar-35 "
           />
         </a>
-      </div>
+        </div>
       <div className="chat-detail">
         <div className="chat-message">
             <p>{props.message}</p>

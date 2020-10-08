@@ -74,7 +74,7 @@ const BookingModal = (props) => {
               <h4 className="mb-4 display-5 font-weight-bolder ">
                 Pick a Lawn date 
               </h4>
-
+{console.log('excluding dates are:',d)}
               <div className="mb-4 text-center">
                 <DatePicker
                   selected={startDate}
